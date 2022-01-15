@@ -1,0 +1,2 @@
+module NotificationDropdownsHelper
+end
