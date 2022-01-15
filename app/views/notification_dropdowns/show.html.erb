@@ -1,7 +1,6 @@
 <%= turbo_frame_tag "notifications" do %>
   <% if @notifications.any? %>
     <div class="pb-4">
-      <h1 class="mt-6 text-center text-3xl font-extrabold mb-5"><%= t("notifications.index.title") %></h1>
       <%= render @notifications %>
     </div>
   <% else %>
