@@ -33,7 +33,7 @@
                 <%= inline_svg_tag "icons/outline/x.svg", class: "h-6 w-6" %>
               </button>
             </div>
-            <div class="max-h-[50vh] px-2 pt-1 bg-gray-100 overflow-y-auto shadow-inner">
+            <div class="max-h-[40vh] px-2 pt-1 bg-gray-100 overflow-y-auto shadow-inner">
               <%= turbo_frame_tag "notifications", loading: :lazy, src: notification_dropdown_path, target: "_top" do %>
                 <%= render LoadingComponent.new %>
               <% end %>
