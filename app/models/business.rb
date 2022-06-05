@@ -7,6 +7,8 @@ class Business < ApplicationRecord
 
   belongs_to :user
   has_many :conversations, -> { visible }
+  has_many :likes, class_name: "Developers::Like"
+  has_many :liked_responses, through: :likes, source: :prompt_response
 
   has_noticed_notifications
 
