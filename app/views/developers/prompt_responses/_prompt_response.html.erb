@@ -3,7 +3,9 @@
     <%= tag.h3 prompt_response.prompt.name, class: "font-medium" %>
     <%= tag.p prompt_response.content, class: "mt-2 text-sm text-gray-700" %>
   </div>
-  <%= turbo_frame_tag "#{dom_id prompt_response}_like", src: like_path(prompt_response_id: prompt_response.id) %>
+  <% if current_user.business && prompt_response.developer != current_user.developer %>
+    <%= turbo_frame_tag "#{dom_id prompt_response}_like", src: like_path(prompt_response_id: prompt_response.id) %>
+  <% end %>
   <% if policy(prompt_response).update? && policy(prompt_response).destroy? %>
     <div class="flex divide-x divide-gray-200">
       <div class="w-0 flex-1 flex">
