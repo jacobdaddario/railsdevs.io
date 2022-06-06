@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     end
 
     resources :prompt_responses, only: %i[edit update destroy], module: :developers
+    resource :like, only: %i[show create destroy], module: :developers
 
     namespace :open_startup, path: "/open" do
       resources :contributions, only: :index
